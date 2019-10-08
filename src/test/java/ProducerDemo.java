@@ -16,5 +16,6 @@ public class ProducerDemo {
             System.out.printf("%s%n", sendResult);
         }
         producer.shutdown();
+
     }
 }

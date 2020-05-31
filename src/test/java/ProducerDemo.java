@@ -10,12 +10,12 @@ public class ProducerDemo {
 
     @Test
     public void producerTest1() throws Exception {
-        DefaultMQProducer producer = new DefaultMQProducer("demo_producer_group_1");
-        producer.setNamesrvAddr("172.18.66.23:9876");
+        DefaultMQProducer producer = new DefaultMQProducer("producer_group_demo_1");
+        producer.setNamesrvAddr("ant01:9876");
 //        producer.setVipChannelEnabled(false);
         producer.start();
         for (int i = 0; i < 5; i++) {
-            Message msg = new Message("demo_topic_1" ,"Tag_1",
+            Message msg = new Message("topic_demo_1" ,"AAbb",
                     ("Hello RocketMQ " + i + ", " + System.currentTimeMillis()).getBytes(RemotingHelper.DEFAULT_CHARSET));
             SendResult sendResult = producer.send(msg);
             log.info(sendResult.toString());

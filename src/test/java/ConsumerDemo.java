@@ -20,13 +20,13 @@ public class ConsumerDemo {
     public void consumerTest1() throws Exception {
 
         // Instantiate with specified consumer group name.
-        DefaultMQPushConsumer consumer = new DefaultMQPushConsumer("demo_consumer_group_2");
+        DefaultMQPushConsumer consumer = new DefaultMQPushConsumer("consumer_group_demo_2");
 
         // Specify name server addresses.
-        consumer.setNamesrvAddr("172.18.66.23:9876");
+        consumer.setNamesrvAddr("ant01:9876");
 
         // Subscribe one more more topics to consume.
-        consumer.subscribe("demo_topic_1", "*");
+        consumer.subscribe("topic_demo_1", "*");
         // Register callback to execute on arrival of messages fetched from brokers.
         consumer.registerMessageListener(new MessageListenerConcurrently() {
 
